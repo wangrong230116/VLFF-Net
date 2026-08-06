@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code preview, please cite the VLFF-Net manuscript."
+title: "VLFF-Net: Text-Guided Vision-Language Feature Fusion for Insulator Defect Instance Segmentation"
+type: software
+version: 0.1.0-review
+date-released: 2026-08-07
+license: AGPL-3.0-only
+repository-code: "https://github.com/wangrong230116/VLFF-Net"
+authors:
+  - name: "VLFF-Net Authors"
+abstract: "Review-stage partial implementation of text-guided feature fusion for insulator defect instance segmentation."

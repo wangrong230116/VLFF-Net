@@ -1,0 +1,32 @@
+# Architecture preview only. The parser, segmentation head and loss code are
+# intentionally withheld during review and this file is not directly trainable.
+model: VLFF-Net
+task: instance-segmentation
+classes:
+  - breakage
+  - contamination
+  - crack
+  - dirt
+  - missing
+  - shelter
+
+text_encoder:
+  family: MobileCLIP-S0
+  embedding_dim: 512
+  cached_at_inference: true
+
+visual_encoder:
+  family: real-time one-stage CNN
+  pyramid_levels: [P3, P4, P5]
+
+fusion:
+  text_adapter_bottleneck: 64
+  visual_adapter_reduction: 128
+  vcte_rank: 64
+  neck_modulation: FiLM
+  neck_hidden_dim: 128
+
+segmentation_head:
+  prototype_channels: 32
+  mask_coefficients: 32
+  runtime: withheld_until_acceptance
